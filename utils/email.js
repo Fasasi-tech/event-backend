@@ -6,8 +6,8 @@ exports.sendEmail = async (subject, message, sent_to, sent_from, reply_to, attac
       port: 2525,
         secure:false,
         auth: {
-            user:"fasasiayinde98@gmail.com",
-            pass: "durbyygrirwxvbmc",
+            user:process.env.USER_PASS,
+            pass: process.env.EMAIL_PASS
         },
     // tls: {
     //     rejectUnauthorized: false,
