@@ -11,12 +11,12 @@ const app = express()
 const cookieParser = require('cookie-parser');
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://reel-event.vercel.app' ]// Replace with your frontend URL
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://reel-event.vercel.app' ]// Replace with your frontend URL
   }));
 
 app.use(express.json())
 app.use(cookieParser());
-const port = 3001
+const port = 8000
 mongoose.connect(process.env.CONN_STR, {
     useNewUrlParser:true
 }).then((conn) => {

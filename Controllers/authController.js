@@ -62,7 +62,7 @@ const newUser = new User({
 
 await newUser.save()
 
-const qrData = `id: ${newUser._id}, First Name: ${newUser.first_name}, Last Name: ${newUser.last_name}, Email: ${newUser.email} `
+const qrData = `id: ${newUser._id} `
 const qrCode = await QRCode.toDataURL(qrData)
 console.log("QR code", qrCode)
 
@@ -70,7 +70,7 @@ const sent_to = newUser.email
 const sent_from = process.env.EMAIL_OWNER
 const reply_to = newUser.email
 const subject = 'Event Registration QR Code'
-const message = `<p>Dear ${newUser.first_name},</p><p>Please find your QR code attached below:</p>`
+const message = `<p>Dear ${newUser.first_name},</p><p>Please find your event QR code attached below:</p>`
 attachments= [
     {
         filename: 'Event.png',
@@ -101,9 +101,9 @@ exports.createAdmin=  {
     const newUser = new User({
         first_name:'Ridwan',
         last_name:"Fasasi",
-        email:'rfasasi@reeltechsolutions.com',
+        email:'usssoclass94event@gmail.com',
         role:'admin',
-        password:'Fasasi09160598619',
+        password:'usssoclass94event',
         state:'lagos',
         gender:'Male',
         phone_number:"09090042494"
